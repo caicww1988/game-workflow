@@ -1,0 +1,23 @@
+﻿{
+  "version": 1,
+  "identities": {
+    "developer_one": {
+      "git_users": ["git_user_one"],
+      "git_emails": ["user-one@example.com"],
+      "role": "admin",
+      "display_name": "Developer One"
+    },
+    "developer_two": {
+      "git_users": ["git_user_two"],
+      "git_emails": ["user-two@example.com"],
+      "role": "developer",
+      "display_name": "Developer Two"
+    }
+  },
+  "roles": {
+    "admin": { "can_edit_team_config": true, "can_edit_all_sessions": true },
+    "developer": { "can_edit_team_config": false, "can_edit_all_sessions": false },
+    "artist": { "can_edit_team_config": false, "can_edit_all_sessions": false }
+  }
+}
+

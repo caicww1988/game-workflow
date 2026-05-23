@@ -1,0 +1,12 @@
+.claude/settings.local.json
+.codex/settings.local.json
+
+team/session-logs/
+team/session-state/
+team/memo/*/closed/
+
+*.tmp
+*.bak
+*.log
+.DS_Store
+Thumbs.db
