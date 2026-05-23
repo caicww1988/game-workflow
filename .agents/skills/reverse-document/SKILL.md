@@ -1,4 +1,4 @@
-﻿---
+---
 name: reverse-document
 description: "Generate design or architecture documents from existing implementation. Works backwards from code/prototypes to create missing planning docs."
 argument-hint: "<type> <path> (e.g., 'design client/Source/client/Gameplay/Combat' or 'architecture client/Source/client/Core')"

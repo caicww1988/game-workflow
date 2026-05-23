@@ -10,6 +10,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $templateRoot = $PSScriptRoot
+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 $target = Resolve-Path -LiteralPath $TargetRoot -ErrorAction SilentlyContinue
 if (-not $target) {
     New-Item -ItemType Directory -Force -Path $TargetRoot | Out-Null
@@ -48,9 +49,9 @@ foreach ($dir in $skeletonDirs) {
 Get-ChildItem -LiteralPath $target -Recurse -File |
     Where-Object { $_.Extension -in ".md", ".json", ".sh", ".py", ".toml" } |
     ForEach-Object {
-        $text = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+        $text = [System.IO.File]::ReadAllText($_.FullName, [System.Text.Encoding]::UTF8)
         $text = $text.Replace("PROJECT_NAME", $ProjectName)
-        Set-Content -LiteralPath $_.FullName -Value $text -Encoding UTF8
+        [System.IO.File]::WriteAllText($_.FullName, $text, $utf8NoBom)
     }
 
 Write-Host "Installed workflow template into $target"

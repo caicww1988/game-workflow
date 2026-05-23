@@ -14,6 +14,7 @@ function Install-WorkflowFromGitHub {
 
     $ErrorActionPreference = "Stop"
 
+    $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
     $zipUrl = "https://github.com/$Repo/archive/refs/heads/$Ref.zip"
     $tempRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("workflow-template-" + [System.Guid]::NewGuid().ToString("N"))
     $zipPath = Join-Path $tempRoot "template.zip"
@@ -66,9 +67,9 @@ function Install-WorkflowFromGitHub {
         Get-ChildItem -LiteralPath $TargetRoot -Recurse -File |
             Where-Object { $_.Extension -in ".md", ".json", ".sh", ".py", ".toml" } |
             ForEach-Object {
-                $text = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+                $text = [System.IO.File]::ReadAllText($_.FullName, [System.Text.Encoding]::UTF8)
                 $text = $text.Replace("PROJECT_NAME", $ProjectName)
-                Set-Content -LiteralPath $_.FullName -Value $text -Encoding UTF8
+                [System.IO.File]::WriteAllText($_.FullName, $text, $utf8NoBom)
             }
 
         Write-Host "Installed workflow template into $TargetRoot"

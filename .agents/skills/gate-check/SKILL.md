@@ -1,4 +1,4 @@
-﻿---
+---
 name: gate-check
 description: "Validate readiness to advance between development phases. Produces a PASS/CONCERNS/FAIL verdict with specific blockers and required artifacts."
 argument-hint: "[target-phase: pre-production | first-playable | vertical-slice | alpha | beta | release]"

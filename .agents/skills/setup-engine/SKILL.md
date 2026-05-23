@@ -1,4 +1,4 @@
-﻿---
+---
 name: setup-engine
 description: "Configure the project's game engine and version. Pins the engine in AGENTS.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data."
 argument-hint: "[engine version] or no args for guided selection"

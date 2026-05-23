@@ -1,4 +1,4 @@
-﻿---
+---
 name: prototype
 description: "Rapid prototyping workflow. Skips normal standards to quickly validate a game concept or mechanic. Produces throwaway code and a structured prototype report."
 argument-hint: "[concept-description]"

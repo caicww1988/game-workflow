@@ -1,4 +1,4 @@
-﻿---
+---
 name: generate-illustration
 description: "AI 立绘生成工作流 — 使用 LiblibAI API 从角色描述生成多视角立绘。引导完成配置检查、模型选择、prompt 编写、图片生成、质量审核的完整流程。"
 argument-hint: "[角色名] (例: warrior, mage, npc_merchant)"

@@ -1,4 +1,4 @@
-﻿---
+---
 name: generate-model
 description: "AI 3D建模工作流 — 使用 Tripo3D API 从立绘生成3D模型。引导完成配置检查、立绘选择、参数配置、模型生成、质量审核的完整流程。"
 argument-hint: "[角色名] (例: warrior, mage, npc_merchant)"

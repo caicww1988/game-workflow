@@ -1,4 +1,4 @@
-﻿---
+---
 name: start
 description: "Project status dashboard and task-based routing for professional developers."
 argument-hint: "[no arguments]"
