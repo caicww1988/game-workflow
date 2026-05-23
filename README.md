@@ -59,16 +59,14 @@ The workflow is lazy by design: create only the folders your new project needs.
 
 ## Install Directly From GitHub
 
-After this template is pushed to GitHub, install it into the current directory
-with:
+Install it into the current directory with:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/OWNER/REPO/main/install-from-github.ps1 | iex; Install-WorkflowFromGitHub -Repo OWNER/REPO -ProjectName MyGame"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/caicww1988/game-workflow/main/install-from-github.ps1 | iex; Install-WorkflowFromGitHub -Repo caicww1988/game-workflow -ProjectName MyGame"
 ```
 
 Replace:
 
-- `OWNER/REPO` with your GitHub repository, for example `your-name/game-workflow-template`.
 - `MyGame` with the target project's display name.
 
 By default the installer writes into the current directory. Add `-Force` only if
